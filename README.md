@@ -6,10 +6,10 @@
 -----
 
 ## Pré-requisitos
-- ### Python 3.x
-- ### Bibliotecas Python: Pandas, Selenium
-- ### Chrome WebDriver (ou WebDriver para o navegador de sua escolha)
-- ### Conexão à internet
+-Python 3.12.3
+-Bibliotecas Python: Pandas, Selenium
+-Chrome WebDriver (ou WebDriver para o navegador de sua escolha)
+-Conexão à internet
 
 -----
 
