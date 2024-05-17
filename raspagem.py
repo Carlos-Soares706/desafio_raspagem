@@ -1,18 +1,22 @@
-from openpyxl import load_workbook # da bibiloteca openpyxl, me dê a função load_workbook
+import pandas as pd
  
 from selenium import webdriver
 from selenium.webdriver.common.by import By
  
+
 # Aciona o WebDriver no endereço correspondente
 driver = webdriver.Chrome()
 driver.get("https://www.rpachallenge.com/")
- 
-# Abre o arquivo Excel
-workbook = load_workbook('challenge.xlsx')
- 
-# Seleciona primeira planilha
-sheet = workbook.active
- 
+
+
+
+# Especifique o caminho do arquivo Excel
+caminho_arquivo = 'caminho/do/seu/arquivo.xlsx'
+
+
+dados_excel = pd.read_excel(caminho_arquivo)
+
+
 # Pega o número máximo de colunas -1 (nesse caso, 8 - 1 = 7)
 n_cols = sheet.max_column - 1
  
