@@ -11,22 +11,22 @@ xlsx_path = os.path.join(inputs_path, 'challenge.xlsx')
 driver = webdriver.Chrome()
 driver.get("https://www.rpachallenge.com/")
 
-def download_arquivo():
-    try:
-        url = 'C:\Users\chnso\programas\desafio_raspagem\src\inputs\challenge.xlsx'
-        arquivo = requests.get(url, allow_redirects=True)
-        open('C:\Users\chnso\programas\desafio_raspagem\src\inputs\challenge.xlsx', 'wb').write(arquivo.content)
-        dados = pd.read_excel('C:\Users\chnso\programas\desafio_raspagem\src\inputs\challenge.xlsx')
-        return dados
-    except Exception as error:
-        print(f'Erro ao fazer o download do arquivo: {error}')
-        raise Exception('Erro ao fazer o download do arquivo')
+    def download_arquivo():
+ #download do arquivo xlsx
+
+        try:
+            url = 'https://rpachallenge.com/assets/downloadFiles/challenge.xlsx'
+            arquivo = requests.get(url, allow_redirects=True)
+            open('challenge.xlsx', 'wb').write(arquivo.content)
+            dados = pd.read_excel('challenge.xlsx')
+            return dados
+        except Exception as error:
+            print(f'Erro ao fazer o download do arquivo: {error}')
+            raise Exception('Erro ao fazer o download do arquivo')
 
 # Baixa o arquivo Excel
 dados_excel = download_arquivo()
 
-# Desafio 2
-# criar uma função para o algoritmo que faz o preenchimento do formulário
 
 def preencher_formulario(dados):
     # Especifique o caminho do arquivo Excel
